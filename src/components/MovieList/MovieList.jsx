@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+//? змінне оточення на фронтенді
+const { VITE_API_URL } = import.meta.env;
+
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
 
   //? отримуємо фільми
   useEffect(() => {
     const fetchMovies = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/movies");
+      const { data } = await axios.get(`${VITE_API_URL}/movies`);
 
       setMovies(data);
     };
