@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 //*приходить помилка яку ми з html перетворюємо на об'єкт
+
 const UserList = () => {
   const [users, setUser] = useState([]);
   const [error, setError] = useState(null);
